@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.pageBody {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#root {
+  display: flex;
+}

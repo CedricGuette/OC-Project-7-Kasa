@@ -1,0 +1,20 @@
+@import './utils/variables';
+@import './utils/mixin';
+
+@import './base/typography';
+@import './base/body';
+
+@import './layouts/header';
+@import './layouts/footer';
+
+@import './components/postHeader';
+@import './components/rentCard';
+@import './components/tagName';
+@import './components/infoBar';
+@import './components/slideShow';
+@import './components/rating';
+
+@import './pages/home';
+@import './pages/aboutUs';
+@import './pages/rent';
+@import './pages/error';

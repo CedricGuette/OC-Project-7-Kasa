@@ -1,0 +1,21 @@
+.aboutUsContainer {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 10px 0;
+
+    @include desktop-only {
+        flex-basis: 80%;
+        margin: 15px 0 15px 0;
+    }
+
+    .infoWrapper {
+        margin: 10px 0 10px 0;
+
+        @include desktop-only {
+            margin: 15px 0 15px 0;
+        }
+    }
+}

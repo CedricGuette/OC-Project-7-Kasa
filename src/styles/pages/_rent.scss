@@ -1,0 +1,147 @@
+.rent {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 90%;
+
+    .slideShowContainer {
+        flex-basis: 100%;
+    }
+
+    .titleAndHost {
+        flex-basis: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 15px 0 15px 0;
+        color: $primary_color;
+
+        @include desktop-only {
+            margin: 30px 0 30px 0;
+        }
+
+        h1 {
+            font-size: 18px;
+
+            @include desktop-only {
+                font-size: 36px;
+            }
+        }
+
+        p {
+            font-size: 14px;
+            margin-bottom: 20px;
+
+            @include desktop-only {
+                font-size: 18px;
+            }
+        }
+
+        .titleLocationTags {
+            display: flex;
+            flex-direction: column;
+
+            @include desktop-only {
+                flex-direction: column;
+            }
+
+            .tagsContainer {
+                display: flex;
+            }
+        }
+
+        .hostRate {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-basis: 100%;
+            margin: 15px 0 0 0;
+
+            @include desktop-only {
+                flex-direction: column;
+                flex-basis: auto;
+                margin: 0;
+            }
+
+            .hostInfo {
+                display: flex;
+                justify-content: flex-end;
+                order: 2;
+
+                @include desktop-only {
+                    order: 1;
+                }
+
+                p {
+                    padding: 0px 5px 0 0;
+                    font-size: 12px;
+                    text-align: right;
+                    flex-basis: 50%;
+                    margin: 0;
+
+                    @include desktop-only {
+                        font-size: 18px;
+                        padding: 12px 12px 0 0;
+                    }
+                }
+
+                .profilePicture {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 32px;
+    
+    
+                        @include desktop-only {
+                            width: 64px;
+                            height: 64px;
+                        }
+                    }
+                }
+            }
+
+            .rating {
+                order: 1;
+                padding-top: 5px;
+
+                @include desktop-only {
+                    order: 2;
+                }
+
+                svg {
+                    width: 15px;
+                    margin-right: 5px;
+
+                    @include desktop-only {
+                        width: 30px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .informationBars {
+        flex-basis: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+
+        .singleInfo {
+            flex-basis: 100%;
+            margin-bottom: 20px;
+
+            @include desktop-only {
+                flex-basis: 48%;
+            }
+        }    
+    }
+}
+
+
+

@@ -1,0 +1,20 @@
+.tagName {
+    width: 84px;
+    min-height: 18px;
+    border-radius: 5px;
+    background: $primary_color;
+    color: #FFFFFF;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 10px;
+
+    @include desktop-only {
+        width: 115px;
+        min-height: 25px;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+}
