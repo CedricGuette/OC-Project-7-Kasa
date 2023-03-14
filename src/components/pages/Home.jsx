@@ -1,11 +1,11 @@
 import RentCard from '../RentCard'
 import PostHeader from '../PostHeader'
-import { logements } from '../../datas/logement'
+import logements  from '../../datas/logements.json'
 
 function Home() {
-
+  document.title = `Kasa - Accueil`
   return (
-    <div className='pageBody'>
+    <article>
       <PostHeader homePage={true}/>
       <div className='locationList'>
         {logements.map((logement) => (
@@ -13,7 +13,7 @@ function Home() {
           )
         )}   
       </div>
-    </div>
+    </article>
   )
 }
 

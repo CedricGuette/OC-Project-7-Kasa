@@ -3,16 +3,16 @@ header {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    flex-basis: 90%;
+    width: 90%;
     margin: 20px 0 17px 0;
 
     @include tablet-only {
-        flex-basis: 90%;   
+        width: 90%;   
         margin: 40px 0 50px 0; 
     }
 
     @include desktop-only {
-        flex-basis: 90%;   
+        width: 90%;   
         margin: 40px 0 50px 0; 
     }
 
@@ -46,10 +46,12 @@ header {
                 padding-top: 17px;
                 list-style: none;
                 font-size: 12px;
+                text-transform: uppercase;
 
                 @include desktop-only{
                     font-size: 24px;  
                     margin: 0 28px 0 28px;
+                    text-transform: none;
                 }
 
 

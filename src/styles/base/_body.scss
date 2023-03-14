@@ -6,12 +6,21 @@
 
 .pageBody {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-basis: 100%;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  min-height: 100vh;
   font-family: 'Montserrat', sans-serif;
 }
 
-#root {
+article {
+  width: 90%;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center
+}
+
+.freeSpace {
+  flex: 1;
 }
