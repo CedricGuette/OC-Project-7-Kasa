@@ -89,3 +89,14 @@
         
     }
 }
+
+.fade {
+    max-height: 300px;
+    width: 100%;
+    transition: max-height .4s ease-in-out;
+    overflow: hidden;
+
+    &.out{
+        max-height: 0;
+    }
+}

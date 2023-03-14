@@ -1,5 +1,7 @@
 import { useState } from 'react'
-import ArrayToList from './ArrayToList'
+// import ArrayToList from './ArrayToList'
+import InfoBarContent from './InfoContent'
+import InfoBarFade from './InfoBarFade'
 
 /**
  * Will render an info bar that can be opened or closed
@@ -9,7 +11,6 @@ import ArrayToList from './ArrayToList'
 function InfoBar({title, content, dimension}) {
 
     const [isOpen, setIsOpen] = useState(false)
-    // const array = new Array()
 
 	return (
             <div className='infoWrapper' style={{ flexBasis: `${dimension}%`}}>
@@ -17,11 +18,14 @@ function InfoBar({title, content, dimension}) {
                     <span>{ title }</span>
                     <div className= {'openButton' + (isOpen ? ' open' : ' close')} onClick={() => isOpen ? setIsOpen(false) : setIsOpen(true)}></div>
                 </div>
-                { isOpen ? (
+                <InfoBarFade visible={isOpen}>
+                    <InfoBarContent content={content} />
+                </InfoBarFade>
+                {/* { isOpen ? (
                     <div className='infoContent'>
                     { Array.isArray(content) ? <ArrayToList array={ content }/>: <p>{ content }</p>}
                     </div>
-                ) : null }
+                ) : null } */}
 
             </div>
     )

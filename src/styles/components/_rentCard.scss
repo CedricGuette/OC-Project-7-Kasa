@@ -4,6 +4,12 @@
     background: $primary_color;
     border-radius: 10px;
     position: relative;
+    transition: box-shadow 0.35s ease-out;
+    box-shadow: 0px 0px 1px rgba(0,0,0,0.15) ;
+
+    &:hover {
+        box-shadow: 7px 7px 10px $primary_color ;
+    }
 
     &::after {
         content: '';
