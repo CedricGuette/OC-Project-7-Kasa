@@ -1,5 +1,10 @@
 import ArrayToList from './ArrayToList'
 
+/**
+ * 
+ * @param {string} content to be added in info bar 
+ * @returns 
+ */
 function InfoBarContent({content}) {
 
 

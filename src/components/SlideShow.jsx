@@ -1,39 +1,59 @@
 import { useState } from "react"
 
-// const NONE = 0
-// const PREVIOUS = 1
-// const NEXT = 2
+// Different steps of the animation of the slideshow
+const VISIBLE = 1
+const HIDDEN = 2
+const ENTERING = 3
+let slidePossible = 1 // This one is used to block switc buttons until the animation is over
 
-function SlideShow({ pictures }) {
+function SlideShow({pictures}) {
 
+    const [stateOne, setStateOne] = useState(HIDDEN)
+    const [stateTwo, setStateTwo] = useState(HIDDEN)
     const [currentPicture, setPicture] = useState(0)
-    // const [roll, setRoll] = useState(NONE)
+    const className = stateOne === ENTERING ? 'previous' : 'current'
     const totalPictures = pictures.length
+
     const nextPicture = () => {
-       setPicture( currentPicture === (totalPictures -1) ? (totalPictures -1) : currentPicture + 1)
-    //    setRoll(NEXT)
+        if(slidePossible === 1) {
+            setPicture( currentPicture === (totalPictures -1) ? (totalPictures -1) : currentPicture + 1)
+            setStateTwo(VISIBLE)
+            slidePossible = 0
+            const timer = setTimeout(() => {
+                setStateTwo(HIDDEN)
+                slidePossible = 1 
+            }, 500)
+            return () => {
+                clearTimeout(timer)
+            }
+        }
     }
     const previousPicture = () => {
-        setPicture( currentPicture === 0 ? 0 : currentPicture - 1)
-        // setRoll(PREVIOUS)
+        if(slidePossible === 1) {
+            setPicture( currentPicture === 0 ? 0 : currentPicture - 1)
+            setStateOne(ENTERING)
+            slidePossible = 0
+            const timer = setTimeout(() => {
+                setStateOne(HIDDEN)
+                slidePossible = 1 
+            }, 500)
+            return () => {
+                clearTimeout(timer)
+            }
+        }
      }
 
 	return (
         <div className='slideShow'>
+
+
             {currentPicture === 0 ? null : (<div className='previousPicture' onClick={previousPicture}></div>)}
             {currentPicture === (totalPictures -1) ? null : (<div className='nextPicture' onClick={nextPicture}></div>)}
             {totalPictures <= 1 ? null : <div className='numberOfPicture'>{currentPicture + 1}/{totalPictures}</div>}
-            {pictures.map((picture, index) => {
-                return (
-                    <div className='picture'  key={index}> 
-                        {/* {roll === PREVIOUS ? (index === currentPicture - 1 && (<img className='previous' src={picture} alt='Aperçu de la location' />)) : null} */}
-                        {index === currentPicture && (<img className='current' src={picture} alt='Aperçu de la location' />)}
-                        {/* {roll === NEXT ? (index === currentPicture + 1 && (<img className='next' src={picture} alt='Aperçu de la location' />)) : null} */}
-                    </div>
 
-                )
-            })}
-
+            {stateOne === HIDDEN ? null : (<img className="current" src={pictures[currentPicture + 1]} alt='Aperçu de la location' />)}
+            {<img className={className} src={pictures[currentPicture]} alt='Aperçu de la location' />}
+            {stateTwo === HIDDEN ? null : (<img className="next" src={pictures[currentPicture - 1]} alt='Aperçu de la location' />)}
         </div>
     )
 }

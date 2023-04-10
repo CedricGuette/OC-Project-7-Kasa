@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react"
 
+
+// Using constant to make easier the mecanics of the animation
 const VISIBLE = 1
 const HIDDEN = 2
 const ENTERING = 3
 const LEAVING = 4
 
+/**
+ * This one is used to generate the info bar when it's opened and to make css animation
+ */
 function InfoBarFade({visible, children}) {
 
     const [state, setState] = useState(visible ? VISIBLE : HIDDEN)

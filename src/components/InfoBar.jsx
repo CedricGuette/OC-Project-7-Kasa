@@ -1,5 +1,4 @@
 import { useState } from 'react'
-// import ArrayToList from './ArrayToList'
 import InfoBarContent from './InfoContent'
 import InfoBarFade from './InfoBarFade'
 
@@ -21,12 +20,6 @@ function InfoBar({title, content, dimension}) {
                 <InfoBarFade visible={isOpen}>
                     <InfoBarContent content={content} />
                 </InfoBarFade>
-                {/* { isOpen ? (
-                    <div className='infoContent'>
-                    { Array.isArray(content) ? <ArrayToList array={ content }/>: <p>{ content }</p>}
-                    </div>
-                ) : null } */}
-
             </div>
     )
 }
