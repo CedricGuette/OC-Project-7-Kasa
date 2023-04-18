@@ -1,10 +1,11 @@
-import { useState } from "react"
+import { useState } from 'react'
+import useKey from './utils/useKey'
 
 // Different steps of the animation of the slideshow
 const VISIBLE = 1
 const HIDDEN = 2
 const ENTERING = 3
-let slidePossible = 1 // This one is used to block switc buttons until the animation is over
+let slidePossible = true // This one is used to block switc buttons until the animation is over
 
 function SlideShow({pictures}) {
 
@@ -15,33 +16,45 @@ function SlideShow({pictures}) {
     const totalPictures = pictures.length
 
     const nextPicture = () => {
-        if(slidePossible === 1) {
-            setPicture( currentPicture === (totalPictures -1) ? (totalPictures -1) : currentPicture + 1)
-            setStateTwo(VISIBLE)
-            slidePossible = 0
-            const timer = setTimeout(() => {
-                setStateTwo(HIDDEN)
-                slidePossible = 1 
-            }, 500)
-            return () => {
-                clearTimeout(timer)
+        // Blocking function if it's the last picture
+        if(currentPicture !== totalPictures - 1) {
+            // Blocking function if animation is not ended
+            if(slidePossible === true) {
+                setPicture( currentPicture === (totalPictures -1) ? (totalPictures -1) : currentPicture + 1)
+                setStateTwo(VISIBLE)
+                slidePossible = false
+                const timer = setTimeout(() => {
+                    setStateTwo(HIDDEN)
+                    slidePossible = true 
+                }, 500)
+                return () => {
+                    clearTimeout(timer)
+                }
             }
         }
     }
     const previousPicture = () => {
-        if(slidePossible === 1) {
-            setPicture( currentPicture === 0 ? 0 : currentPicture - 1)
-            setStateOne(ENTERING)
-            slidePossible = 0
-            const timer = setTimeout(() => {
-                setStateOne(HIDDEN)
-                slidePossible = 1 
-            }, 500)
-            return () => {
-                clearTimeout(timer)
+        // Blocking function if it's the first picture
+        if(currentPicture > 0){
+            // Blocking function if animation is not ended
+            if(slidePossible === true) {
+                
+                setPicture( currentPicture === 0 ? 0 : currentPicture - 1)
+                setStateOne(ENTERING)
+                slidePossible = false
+                const timer = setTimeout(() => {
+                    setStateOne(HIDDEN)
+                    slidePossible = true 
+                }, 500)
+                return () => {
+                    clearTimeout(timer)
+                }
             }
         }
      }
+
+     useKey('ArrowLeft', previousPicture)
+     useKey('ArrowRight', nextPicture)
 
 	return (
         <div className='slideShow'>

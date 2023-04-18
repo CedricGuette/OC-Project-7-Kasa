@@ -13,8 +13,23 @@
     @include desktop-only {
         margin: 43px 0 43px 0;
         padding: 50px 50px 50px 50px;
-        background: #F7F7F7;
         grid-gap: 60px;
     }
 
+}
+
+.light-mode {
+    .locationList {
+        @include desktop-only {
+            background: #F7F7F7;
+        }
+    }
+}
+
+.dark-mode {
+    .locationList {
+        @include desktop-only {
+            background: #1f1f1f;
+        }
+    }
 }

@@ -24,3 +24,15 @@ article {
 .freeSpace {
   flex: 1;
 }
+
+.light-mode {
+  .pageBody {
+      background: #FFF;
+  }
+}
+
+.dark-mode {
+  .pageBody {
+      background: #000;
+  }
+}

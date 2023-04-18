@@ -1,4 +1,5 @@
 import logo from '../assets/logo.svg'
+import NightModeButton from './NightModeButton'
 
 function Footer() {
 	return (
@@ -7,6 +8,7 @@ function Footer() {
                 <img src={logo} alt='Logo de Kasa' />
             </div>
             <span className='copyright'>© 2020 Kasa. All rights reserved</span>
+            <NightModeButton/>
         </footer>
     )
 }

@@ -28,3 +28,16 @@ footer {
         }
     }
 }
+
+.light-mode {
+    Footer {
+        background: #000;
+    }
+}
+
+.dark-mode {
+    Footer {
+        background: #1f1f1f;
+
+    }
+}

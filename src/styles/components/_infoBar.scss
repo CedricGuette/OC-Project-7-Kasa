@@ -61,7 +61,6 @@
 
     .infoContent {
         flex-basis: 100%;
-        background: #F7F7F7;
         border-radius: 5px;
         position: relative;
         z-index: 0;
@@ -98,5 +97,17 @@
 
     &.out{
         max-height: 0;
+    }
+}
+
+.light-mode {
+    .infoContent {
+        background: #F7F7F7;
+    }
+}
+
+.dark-mode {
+    .infoContent {
+        background: #1f1f1f;
     }
 }
