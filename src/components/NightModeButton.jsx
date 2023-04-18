@@ -2,13 +2,13 @@ import { useContext } from "react"
 import { ThemeContext } from "./utils/context/ThemeProvider"
 
 function NightModeButton() {
-    const { toggleTheme , theme} = useContext(ThemeContext)
+    const { toggleTheme, theme } = useContext(ThemeContext)
 
 	return (
-            <div className='nightModeButton'>
+            <div className={theme === 'night' ? 'nightModeButtonOn' : 'nightModeButtonOff'}>
                 <span>Night mode :</span> 
                 <label className='switch'>
-                    {theme === 'light' ? (<input type='checkbox' onChange={toggleTheme} />) : (<input type='checkbox' onChange={toggleTheme} checked/>)}
+                    <input type='checkbox' onChange={toggleTheme} />
                     <span className='slider'></span>
                 </label>
             </div>

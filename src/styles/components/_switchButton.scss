@@ -1,3 +1,30 @@
+.nightModeButtonOn {
+    .slider {
+        background-color: #000;
+
+        &:before {
+            height: 12px;
+            width: 12px;
+            right: 2px;
+            bottom: 2px;
+            background-color: #FFF;
+        }
+    }
+}
+
+.nightModeButtonOff {
+    .slider {
+        background-color: #FFF;
+
+        &:before {
+            height: 12px;
+            width: 12px;
+            left: 2px;
+            bottom: 2px;
+            background-color: #000;
+        }
+    }
+}
 .switch {
     position: relative;
     display: inline-block;
@@ -10,22 +37,6 @@
         width: 0;
         height: 0;
 
-
-        &:checked + .slider {
-            background-color: #000;
-            border-radius: 10px;
-        }
-
-        &:focus + .slider {
-            box-shadow: 0 0 1px #000;
-        }
-
-        &:checked + .slider:before {
-            -webkit-transform: translateX(14px);
-            -ms-transform: translateX(14px);
-            transform: translateX(14px);
-            background-color: #FFF;
-        }
     }
 
     .slider {
@@ -35,21 +46,11 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #FFF;
-        -webkit-transition: .4s;
-        transition: .4s;
         border-radius: 10px;
 
         &:before {
             position: absolute;
             content: "";
-            height: 12px;
-            width: 12px;
-            left: 2px;
-            bottom: 2px;
-            background-color: #000;
-            -webkit-transition: .4s;
-            transition: .4s;
             border-radius: 12px;
         }
 
@@ -63,7 +64,7 @@
     }
 }
 
-.nightModeButton {
+.nightModeButtonOn, .nightModeButtonOff {
     span {
         color: #FFF;
         padding-right: 3px;

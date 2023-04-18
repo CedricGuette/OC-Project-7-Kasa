@@ -3,7 +3,14 @@ import { createContext, useState, useLayoutEffect } from 'react'
 export const ThemeContext = createContext()
 
 export const ThemeProvider = ({ children }) => {
-    const initialTheme = () => localStorage.getItem('NIGHTMODE')
+    const initialTheme = () => {
+      if(localStorage.getItem('NIGHTMODE') !== null) {
+        return localStorage.getItem('NIGHTMODE')
+      } else {
+        return 'light'
+      }
+    }
+
     const[theme, setTheme] = useState(initialTheme)
     const toggleTheme = () => {
         setTheme(theme === 'light' ? 'night' : 'light')
