@@ -28,7 +28,7 @@
     .previousPicture {
         cursor: pointer;
         position: absolute;
-        z-index: 1;
+        z-index: 3;
         left: 0;
         top: 0;
         height: 255px;
@@ -46,7 +46,7 @@
             border-right: 3px solid #FFFFFF;
             rotate: (135deg);
             position: absolute;
-            z-index: 2;
+            z-index: 4;
             top: 48%;
             left: 25%;   
 
@@ -69,7 +69,7 @@
     .nextPicture {
         cursor: pointer;
         position: absolute;
-        z-index: 1;
+        z-index: 3;
         right: 0;
         top: 0;
         height: 255px;
@@ -87,7 +87,7 @@
             border-right: 3px solid #FFFFFF;
             rotate: (315deg);
             position: absolute;
-            z-index: 2;
+            z-index: 4;
             top: 48%;
             right: 25%;   
 
@@ -110,7 +110,7 @@
     .numberOfPicture {
         color: #FFFFFF;
         position: absolute;
-        z-index: 2;
+        z-index: 3;
         left: 50%;
         right: 50%;
         bottom: 25px;
@@ -125,7 +125,7 @@
     
     .previous {
         position: absolute;
-        z-index: 0;
+        z-index: 2;
         top: 0;
         left: 0;
         animation:  slideIn 500ms ease-out forwards;
@@ -133,7 +133,7 @@
     
     .next {
         position: absolute;
-        z-index: 0;
+        z-index: 1;
         top: 0;
         left: 0;
     
